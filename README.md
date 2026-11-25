@@ -1,49 +1,72 @@
-# StockPilot — Inventory and Stock Management System
+# StockPilot – Inventory Management System
 
-A Django portfolio project for managing a small product inventory.
+A Django-based inventory management system to manage products, stock levels and low-stock alerts.
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
 ## Features
-- User registration, login, and logout
-- Add, view, edit, and delete products
-- SKU, category, quantity, unit price, and reorder level
-- Stock-in and stock-out operations
-- Stock movement history
+
+- Product registration, editing, search and deletion
+- Stock-in and stock-out tracking
+- Stock-level management
 - Low-stock alerts
-- Product search
-- Authenticated REST API with per-user data isolation
-- Django admin and automated tests
 
-## Windows / VS Code setup
-Open the extracted `stockpilot_inventory_fixed` folder in VS Code. Open Terminal → New Terminal and run each command separately:
+## Tech Stack
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python manage.py makemigrations inventory
+- **Backend:** Python, Django
+- **Database:** SQL (SQLite)
+- **Frontend:** HTML, Bootstrap
+
+## Getting Started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Yaswanthnaikk/StockPilot-Inventory-Management.git
+cd StockPilot-Inventory-Management
+```
+
+2. Create and activate a virtual environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate      # macOS / Linux
+```
+
+3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Apply migrations and create an admin user
+
+```bash
 python manage.py migrate
+python manage.py createsuperuser
+```
+
+5. Run the server
+
+```bash
 python manage.py runserver
 ```
 
-Open http://127.0.0.1:8000/ and register an account.
+Open http://127.0.0.1:8000/ in your browser.
 
-If PowerShell blocks activation, use Command Prompt in VS Code and run:
-```cmd
-.venv\Scripts\activate.bat
-```
+<!-- Add screenshots here: create a "screenshots" folder in the repo, upload images, then use ![Home page](screenshots/home.png) -->
 
-## Useful URLs
-- `/` — inventory dashboard
-- `/accounts/register/` — register
-- `/accounts/login/` — login
-- `/admin/` — Django admin
-- `/api/products/` — authenticated REST API
+## What I Learned
 
-## Tests
-```powershell
-python manage.py test
-```
+- Designing Django models and database relationships
+- Building CRUD operations with the Django ORM
+- Handling stock logic and alert conditions
 
-## Important
-This is a learning project, not production inventory software. Before real business use, add proper deployment secrets, HTTPS, database backups, stronger role permissions, audit controls, and concurrency testing. Do not use real business records until it has been reviewed and secured.
+## Author
+
+**Yaswanth Naik Desavath**
+[GitHub](https://github.com/Yaswanthnaikk) | [LinkedIn](https://linkedin.com/in/yaswanth-naik) | dyaswanthnaiknaik@gmail.com
